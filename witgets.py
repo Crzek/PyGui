@@ -18,8 +18,9 @@ class FastWitget(QWidget):
 
     def create_button(self, text, callback: callable, *args):
         button = QPushButton(text)
-        button.clicked.connect(lambda _: callback(args))
-        return button
+        valueCallback = None
+        button.clicked.connect(lambda valor: callback(*args))
+        return button, valueCallback
 
     def create_checkbox(self, text, callback: callable):
         checkbox = QCheckBox(text)

@@ -8,14 +8,11 @@ class Action:
         pass
 
     def open_file(self, parent, label):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
         file_name, _ = QFileDialog.getOpenFileName(
             parent,
             "Open file",
-            "",
-            "All Files (*);;Text Files (*.txt)",
-            options=options)
+            "./",
+            "All Files (*);;Text Files (*.txt);;PDF Document(*.pdf)")
         if file_name:
             with open(file_name, "r") as f:
                 data = f.read()
@@ -43,6 +40,15 @@ class Action:
             with open(file_path, "w") as f:
                 f.write(self.text)
             return file_path
+
+    def savePath(self, label):
+        file_name, typesFiles = QFileDialog.getOpenFileName(
+            None, "Save Path File", "./", "All Files (*);;PDF Document(*.pdf)")
+        if file_name:
+            file_path = file_name.split("/")[-1]
+            label.setText(f"file: {file_path}")
+
+        return file_name
 
     def merge_Pdf(self):
         pass

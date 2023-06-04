@@ -5,14 +5,16 @@ from PyQt6.QtWidgets import QApplication
 import sys
 
 # main
+# instanciamos las clases que se van a usar
 app = QApplication(sys.argv)
 
 witgett = FastWitget("I love my Doc", 600, 300)
+action = Action()
 
 label = witgett.create_label("file:")
-btn = witgett.create_button("Load", Action.open_file, None, label)
+btn = witgett.create_button("Load", action.savePath, label)
 label2 = witgett.create_label("file:")
-btn2 = witgett.create_button("Load", Action.open_file, witgett, label2)
+btn2 = witgett.create_button("Load", action.savePath, label2)
 
 page = witgett.create_page([btn, label, btn2, label2])
 page.show()
