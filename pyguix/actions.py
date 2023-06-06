@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import QFileDialog
 
-from pyguix.actions import actions
 from pyguix.pages import Page
 from pyguix.widgets import FastWidget
 
