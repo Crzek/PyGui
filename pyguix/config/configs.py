@@ -1,7 +1,7 @@
 import configparser
 import os
 
-CONFIGFile = "./config/config.ini"
+CONFIGFile = "./pyguix/config/config.ini"
 
 current_directory = os.path.abspath(CONFIGFile)
 # configFilePATH = os.path.join(current_directory, CONFIG)

@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import QFileDialog
 
-from pyguix.pages import Page
-from pyguix.widgets import FastWidget
+from .pages import Page
+from .widgets import FastWidget
 
 
-from pyguix.config import data_dir, files_save
+from pyguix.config.configs import data_dir, files_save
 
 
 class Action:
