@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QFileDialog
-from config.configs import data_dir, files_save
+from ..config.configs import data_dir,files_save
 
 
 class Action:

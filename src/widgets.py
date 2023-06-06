@@ -1,8 +1,9 @@
 from PyQt6.QtWidgets import QPushButton, QCheckBox, QLabel, QWidget, QVBoxLayout, QToolBar, QGridLayout, QPushButton
+
 from PyQt6.QtGui import QAction, QPixmap
 
 
-class FastWitget(QWidget):
+class FastWidget(QWidget):
 
     def __init__(self,
                  titleNav: str,
