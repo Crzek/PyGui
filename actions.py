@@ -6,7 +6,6 @@ class Action:
 
     def __init__(self):
         pass
-
     def open_file(self, parent, label):
         file_name, _ = QFileDialog.getOpenFileName(
             parent,

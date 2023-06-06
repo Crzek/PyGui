@@ -16,11 +16,38 @@ class FastWitget(QWidget):
         # self.resize(width, height)
         print(f"Window size set to {width} x {height}")
 
+    def create_button2(self, text, callback: callable, *args):
+        button = QPushButton(text)
+        valueFunc = button.clicked.connect(lambda: callback(*args))
+        return button, valueFunc 
+
+
     def create_button(self, text, callback: callable, *args):
         button = QPushButton(text)
-        valueCallback = None
-        button.clicked.connect(lambda valor: callback(*args))
-        return button, valueCallback
+        valueFuntion = None  # Variable para almacenar el valor retornado por la callback
+
+        def on_button_clicked():
+            nonlocal valueFuntion
+            valueFuntion = callback(*args)
+        
+        button.clicked.connect(on_button_clicked)
+
+        return button, valueFuntion
+
+    def createBTN(texto):
+        def wrapper(funB):
+            buttton = QPushButton(texto)
+
+            def wrapper2(*args,**kwargs):
+                value = None
+                def wrapper3():
+                    nonlocal value
+                    value = funB(*args)
+
+                buttton.clicked.connect(wrapper3)
+            return wrapper2
+        return wrapper
+        
 
     def create_checkbox(self, text, callback: callable):
         checkbox = QCheckBox(text)
@@ -52,6 +79,8 @@ class FastWitget(QWidget):
         btn_nav = self.create_button(name, callback)
         self.layout().addWidget(btn_nav)
         btn_nav.clicked.connect(callback)
+
+    
 
 
 class GridWidget(QWidget):
