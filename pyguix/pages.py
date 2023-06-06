@@ -1,6 +1,9 @@
 import typing
+
 from PyQt6 import QtCore
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QMainWindow, QStackedWidget
+
+
 from widgets import GridWidget
 
 

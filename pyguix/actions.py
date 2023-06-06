@@ -1,11 +1,18 @@
 from PyQt6.QtWidgets import QFileDialog
-from ..config.configs import data_dir,files_save
+
+from pyguix.actions import actions
+from pyguix.pages import Page
+from pyguix.widgets import FastWidget
+
+
+from pyguix.config import data_dir, files_save
 
 
 class Action:
 
     def __init__(self):
         pass
+
     def open_file(self, parent, label):
         file_name, _ = QFileDialog.getOpenFileName(
             parent,
