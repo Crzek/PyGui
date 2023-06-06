@@ -1,0 +1,10 @@
+setup.py
+pyguix/__init__.py
+pyguix/actions.py
+pyguix/pages.py
+pyguix/widgets.py
+pyguix.egg-info/PKG-INFO
+pyguix.egg-info/SOURCES.txt
+pyguix.egg-info/dependency_links.txt
+pyguix.egg-info/requires.txt
+pyguix.egg-info/top_level.txt
